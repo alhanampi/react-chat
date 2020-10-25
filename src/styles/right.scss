@@ -1,3 +1,77 @@
-#rightSide {
-    background-color: orange;
-}
+  #rightSide {
+    width: 60%;
+    .conversationHeader {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      flex-wrap: nowrap;
+      padding: 2%;
+      .column1 {
+        width: 20%;
+        .headerPhoto {
+          width: 75%;          
+          border-radius: 80px;
+        }
+      }
+      .column2 {
+        p {
+          font-weight: 600;
+          font-size: 1.3em;
+          margin-top: -5%;
+        }
+      }
+    }
+    .conversationBody {
+      background-color: rgb(194, 193, 193);
+      height: 80%;
+    }
+    .messageBox {
+      position: fixed;
+      bottom: 0;
+      height: 9%;
+      display: flex;
+      align-items: center;
+      background-color: white;
+      width: 100%;
+      padding: 0 3% 0 3%;
+      .formBox {
+        width: 100%;
+        .newMessage {
+          width: 40%;
+          font-size: 16px;
+          border-style: solid;
+          padding: 8px;
+          border-width: 2px;
+          border-radius: 12px;
+          background-color: #fafafa;
+          border-color: #e2e2e2;
+          color: #949494;
+          margin-right: 2%;
+          font-weight: 600;
+        }
+        .sendMessage {
+          background-color: #f9f9f9;
+          border-radius: 12px;
+          border: none;
+          display: inline-block;
+          font-size: 1.2em;
+          font-weight: 800;
+          cursor: pointer;
+          color: #6b6b6b;
+          padding: 12px 24px;
+          text-decoration: none;
+          &:hover {
+            background-color: #d1d1d1;
+          }
+        }
+      }
+    }
+  }
+
+  //queries:
+
+  @media (max-width: 720px) {
+    #rightSide .messageBox .formBox .newMessage {
+      width: 35%;
+    }
+  }

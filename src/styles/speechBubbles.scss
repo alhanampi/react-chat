@@ -1,0 +1,151 @@
+@mixin bubbleBox {
+  position: relative;
+  background: #e1e5e5;
+  border-radius: 0 8px 8px 8px;
+  height: 8vh;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 2%;
+}
+
+@mixin bubblePointer {
+  content: "";
+  position: absolute;
+  top: 14%;
+  width: 0;
+  height: 0;
+  border: 25px solid transparent;
+  border-right-color: #e1e5e5;
+  border-top: 0;
+  margin-top: -14px;
+  margin-left: -24px;
+}
+
+.chats {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 1% 5%;
+  .messageRight,
+  .messageLeft {
+    display: flex;
+  }
+
+  .messageLeft {
+    .speechBubbleLeft {
+      @include bubbleBox;
+      margin-left: 16%;
+      margin-top: -3%;
+      box-shadow: 8px 1px 10px 3px rgba(0, 0, 0, 0.3);
+    }
+
+    .speechBubbleLeft:after {
+      @include bubblePointer;
+      left: 0;
+      border-left: 0;
+    }
+    .timestamp {
+      padding-left: 100%;
+    }
+  }
+
+  .messageRight {
+    display: flex;
+    flex-direction: row-reverse;
+    right: 0;
+    .column1 {
+      margin-right: -88%;
+      img {
+        margin-left: 120%;
+      }
+    }
+    .speechBubbleRight {
+      @include bubbleBox;
+      background: #d8c4c7;
+      margin-left: 5%;
+      margin-top: -3%;
+      border-radius: 8px 0 8px 8px;
+      box-shadow: -8px 1px 10px 3px rgba(0, 0, 0, 0.3);
+    }
+    .speechBubbleRight:after {
+      @include bubblePointer;
+      right: 0;
+      top: 50%;
+      border-left-color: #d8c4c7;
+      border-right: 0;
+      margin-top: -49.5px;
+      margin-right: -24px;
+    }
+  }
+
+  .column1 {
+    img {
+      width: 60px;
+      border-radius: 80px;
+    }
+  }
+  .column2 {
+    display: flex;
+    flex-direction: column;
+    margin-top: -3vh;
+    margin-left: -5%;
+    .timestamp {
+      margin-bottom: 5%;
+    }
+  }
+}
+
+//mediaqueries:
+
+@media (max-width: 1440px) {
+  .chats {
+    .messageLeft,
+    .messageRight {
+      width: 60%;
+    }
+    .messageRight {
+      .column1 {
+        margin-right: -48%;
+      }
+    }
+  }
+}
+@media (max-width: 1080px) {
+  .chats .column2 {
+    width: 83%;
+  }
+  .chats .messageLeft .speechBubbleLeft:after {
+    margin-top: -10px;
+  }
+  .chats .messageRight .speechBubbleRight:after {
+    margin-top: -34.5px;
+  }
+}
+
+@media (max-width: 720px) {
+  .chats {
+    .column2 {
+      margin-left: -1%;
+    }
+    .messageLeft,
+    .messageRight {
+      width: 57%;
+      .speechBubbleLeft {
+        width: 154%;
+        margin-right: 13%;
+      }
+      .speechBubbleLeft:after {
+        margin-top: -13px;
+      }
+      .speechBubbleRight {
+        width: 132%;
+        margin-left: -13%;
+      }
+      .speechBubbleRight:after {
+        margin-top: -47.5px;
+      }
+    }
+  }
+}

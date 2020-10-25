@@ -1,4 +1,4 @@
-import './App.scss';
+import './styles/main.scss';
 import ChatsContainer from './components/structure/Left/ChatsContainer';
 import ConversationContainer from './components/structure/Right/ConversationContainer';
 

@@ -1,17 +1,27 @@
 import React from "react";
-import "../../../styles/left.scss";
 import ChatBox from "./ChatBox";
 import LogoContainer from "./LogoContainer";
+import { users } from "../../../data/chatData";
 
 const ChatsContainer = () => {
   return (
-    <div className="" id="leftSide">
+    <div id="leftSide">
       <LogoContainer appName={"React Chat"} />
-      <ChatBox
-        name={"Luciana Gutierrez"}
-        message={"Si tengo alguna otra novedad te comento"}
-        date={"10.20 am"}
-      />
+      {users.map((data, key) => {
+        return (
+          <ChatBox
+            key={key}
+            userName={data.name}
+            photo={data.photo}
+            title={data.lastMessage}
+            lastLogin={data.lastLogin}
+            isActive={data.isActive}
+          />
+        );
+      })}
+      <div>
+        <button className="newUser"> + Create New</button>
+      </div>
     </div>
   );
 };

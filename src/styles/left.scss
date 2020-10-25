@@ -1,0 +1,108 @@
+#leftSide {
+  background-color: rgb(39, 39, 39);
+  width: 40%;
+  #leftHeader {
+    background: linear-gradient(
+      90deg,
+      rgba(140, 0, 0, 1) 0%,
+      rgba(255, 0, 0, 1) 100%
+    );
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    h1 {
+      font-size: 2.5rem;
+      color: white;
+      display: inline;
+    }
+    .logo {
+      padding: 8%;
+      width: 16%;
+    }
+  }
+  .chatsPreviews {
+    background: rgb(44, 44, 44);
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    border-color: rgb(190, 189, 189);
+    border-style: solid;
+    border-width: 1px 0 1px 0;
+    padding: 2% 0 2% 0;
+    cursor: pointer;
+    &:hover {
+      background: rgb(65, 65, 65);
+    }
+    .column1 {
+      width: 20%;
+      padding-left: 1%;
+      .contactPhoto {
+        width: 80%;
+        border-radius: 80px;
+      }
+    }
+    .column2 {
+      width: 50%;
+      padding-right: 15%;
+    }
+    .column3 {
+      align-items: flex-end;
+      padding-right: 1%;
+      margin-top: -10%;
+    }
+  }
+  .active {
+    background-color: rgb(88, 88, 88);
+    border-color: rgb(255, 0, 0);
+    border-style: solid;
+    border-width: 0px 5px 0px 0;
+  }
+  .newUser {
+    border: none;
+    background: rgb(44, 44, 44);
+    color: white;
+    width: 100%;
+    height: 8vh;
+    font-size: 2em;
+    font-weight: 800;
+    cursor: pointer;
+    &:hover {
+      background: rgb(65, 65, 65);
+    }
+  }
+}
+
+//queries:
+
+@media (max-width: 1080px) {
+  #leftSide {
+    .chatsPreviews {
+      padding: 2%;
+      .column1 {
+        width: 22%;
+      }
+      .column2 {
+        width: 50%;
+        padding-right: 10%;
+      }
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  #leftSide #leftHeader {
+    height: 10vh;
+    h1 {
+      font-size: 1.9em;
+    }
+  }
+  #leftSide .chatsPreviews {
+    padding: 0;
+    .column2 {
+      width: 50%;
+      padding-right: 5%;
+    }
+  }
+}

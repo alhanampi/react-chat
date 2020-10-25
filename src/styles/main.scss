@@ -1,0 +1,52 @@
+//imports
+@import "./left.scss";
+@import "./right.scss";
+@import "./speechBubbles.scss";
+
+//commons
+body {
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+p,
+button,
+input {
+  font-family: "Montserrat", sans-serif;
+}
+
+p {
+  font-size: 1.2em;
+  color: rgb(150, 150, 150);
+}
+
+h1, h2 {
+  font-size: 2.5em;
+}
+
+.App {
+  display: flex;
+  height: 100vh;
+  .conversationBody {
+    padding-top: 3%;
+  }
+}
+
+//mediaqueries:
+
+@media (max-width: 1080px) {
+  h1, h2 {
+    font-size: 1.8em;
+  }
+  p {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 720px) {
+  h1, h2 {
+    font-size: 1.3em;
+  }
+}
