@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import ChatBox from "./ChatBox";
 import LogoContainer from "./LogoContainer";
 import { users } from "../../../data/chatData";
@@ -11,6 +11,7 @@ const ChatsContainer = () => {
         return (
           <ChatBox
             key={key}
+            id={data.userId}
             userName={data.name}
             photo={data.photo}
             title={data.lastMessage}
